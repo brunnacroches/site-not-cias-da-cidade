@@ -1,0 +1,322 @@
+/* ESTRUTURA DO SITE */
+
+*{
+	margin:0;
+	padding:0;
+}
+
+/* IMAGEM DO FUNDO VAI SE REPETINDO VARIAS VEZES */
+
+body {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	background: #fff url(../imagens/fundo.png) repeat-x;
+
+}
+/* REPEAT-X : PARA REPETIR 1 VEZ NA HORIZONTAL */
+/* O IDEIA DO CONTAINER E LIMITARMOS A NOSSA AREA DE CONTEUDO */
+
+#container {
+	width: 750px;
+	margin: 0 auto;
+	/*border: 1px solid red;*/
+}
+
+/* COLOCANDO A IMAGEM DO BRASIL NO TOPO */
+
+#topo {
+	height: 150px;
+	background: url(../imagens/detalhe-topo.png) no-repeat right top;
+	padding-top: 25px;
+	/*border: 1px solid red;*/
+}
+
+.logo {
+	width: 152px;
+	height: 66px;
+	background: url(../imagens/logo.png) no-repeat center;
+	text-indent: -3000px;
+}
+
+/* TEXT-INDENT :ESCONDENDO O CONTEUDO / O DISPLAY NONE NAO E MUITO RECOMENDADO  */
+
+
+				/* FORMATANDO A BARRA DE NAVEGACAO */
+
+a:link, a:visited {
+	color: #b10333;
+	padding: 2px;
+}
+
+a:hover {
+	color: #e50040;
+}
+
+/* FORMATANDO A UL PADRAO */
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+					/*QUE ESTA DENTRO TOPO */
+/* FORMATANDO A BARRA DE NAVEGACAO QUE ESTA DENTRO TOPO */
+
+#topo ul {
+	margin-top: 30px;
+	background: #b10333;
+	float: left;
+}
+					/*SELETOR DESCENDENTE */
+/*SELECIONAR OS LI QUE ESTAO DENTRO UL E QUE ESTAO DENTRO DE TOPO*/
+
+#topo ul li {
+	float: left;
+}
+					/*SELECIONAR OS LINKS QUE ESTAO DENTRO DA UL */
+/*  */
+#topo ul a {
+	font-size: 0.9em;
+	display: block;
+	padding: 0.5em 1.5em;
+	line-height: 2.1em;
+	text-decoration: none;
+	color: #fff;
+	background:url(../imagens/divisor.png) no-repeat left center;
+}
+
+					/*TIRAR O DIVISOR QUE ESTA BEM NO COMECINHO (DIVISOR.PNG) */
+#topo ul .primeiro a {
+	background: none;
+}
+
+#topo ul a:hover {
+	color: #69001d; 
+}
+
+					/*APARECER DESTACADO SOMENTE O "HOME" SEM A MOUSE DE MAO */
+body.home #navegacao a#home,
+body.brasil #navegacao a#brasil,
+body.internacional #navegacao a#internacional,
+body.fotos #navegacao a#fotos
+{
+	color: #fff;
+	background: #de003e;
+	cursor: text;
+}
+					/*AS TRES COLUNAS */
+				/*CONFIGURAR LAYOUT DE TRES COLUNAS */
+
+#conteudo{
+	margin-top: 60px;
+	background: #f5f5f5;
+}
+				/*CALCULANDO O ESPACO DAS COLUNAS */
+/* O LAYOUT TEM UMA LARGURA TOTAL DE 750 px E VOU CONFIGURAR EM 3 COLUNAS */
+/* 270 x 2 ( DUAS COLUNAS) = 540px SOBRA 180 = 720 - 750 E TEMOS 30px DE ESPACAMENTO */
+
+/*MEU LAYOUT/CONTAINER TEM 750px NO TOTAL E EU POSSO COLOCAR UMA MARGEM DE -750px */
+
+#lateral {
+	width: 180px;
+	float: left;				/*DEIXAR O ELEMENTO FLUTUANDO*/
+	margin: 0 0 20px -750px; 	/*MARGEM SUP: 0; / MARGEM DI:0, MARG INF: 20PX /PARA QUE A LATERAL DE UM ESPACO NO RODAPE  */
+	/*background: yellow; */
+}
+
+
+/* O PRIMARIO TEM 555px + 15px QUE E O ESPACAMENTO ENTRE ELES + 180px QUE E A LATERAL 
+ COM ISSO NOS TEREMOS O TOTAL DE 750px */
+#primario {
+	width: 270px;
+	float: left;    			/*DEIXAR O ELEMENTO FLUTUANDO*/
+	margin: 0 0 20px 195px; 	/*A LATERAL TEM 180 E NOS QUEREMOS DEIXAR UM ESPACAMENTO DE 15PX */
+	/* background: blue; */
+}
+
+#duas-colunas #primario {
+	width: 555px;
+	/* float: left;    			*/	/*DEIXAR O ELEMENTO FLUTUANDO*/
+	/* margin: 0 0 20px 195px; */ 	/*A LATERAL TEM 180 E NOS QUEREMOS DEIXAR UM ESPACAMENTO DE 15PX */
+	/* background: blue;      */
+}
+
+#uma-coluna #primario {
+	width: 750px;
+	/* float: left; */   			/*DEIXAR O ELEMENTO FLUTUANDO*/
+	margin: 0 0 20px 0px; 	/*A LATERAL TEM 180 E NOS QUEREMOS DEIXAR UM ESPACAMENTO DE 15PX */
+	/* background: blue; */
+}
+
+#secundario {
+	width: 270px;
+	float: left;					/*DEIXAR O ELEMENTO FLUTUANDO*/
+	margin: 0 0 20px 15px;
+}
+									/*CAIXA*/
+.caixa {
+	margin: 10px 0; 				/*10px SUP E INF - 0 NAS LATERAIS */
+	padding: 5px 0 5px 0;			/* 5px SUP , 0 NA LATERAL , 5px INF , 0 LATERAL */
+	background: #f3f3f3 url(../imagens/fundo-caixa.png);
+}
+									/*FORMATAR ENTREVISTAS TITULO*/
+							
+h2 {		
+	font-size:1em;					/*TAMANHO DA LETRA */
+	background: #294c71;
+	color: #fff;
+	padding: 5px; 					/*ESPACAMENTO ENTRE ELA */
+}
+
+.caixa-conteudo{
+	background: #fff;
+	padding: 5px;
+	margin-top: 5px;
+}
+								/*FORMATAR MENUS LATERAIS*/
+#lateral ul a {
+	font-size: 0.9em;
+	padding: 3px;
+	display: block;   
+	line-height: 30px;
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+								/*PASSAR O MOUSE NO MENU LATERAL*/
+#lateral ul a:hover {
+	background: #f9f9f9 url(../imagens/marcador.png) no-repeat left center;
+	padding-left: 20px;  	/*MOVIMENTAR A SETINHA PARA A ESQUERDA*/
+	color: #a1a1a1;
+}
+
+								/* FORMATAR FORMULARIOS */
+label {
+	display: block;
+	cursor: pointer;
+}
+
+input {						/* FORMATAR A CAIXA DE ESCREVER */
+	padding: 5px;
+	width: 125px;
+	font-size: 0.9em;
+	background-color: #fff;
+}
+
+input.submit {				/* FORMATAR O BOTAO ENVIAR */
+	width: 80px;
+	color: #fff;
+	background-color: #b10333;
+	border: 2px solid #870529;
+}
+
+								/* FORMATANDO IMAGENS */
+img {
+	border: 2px solid #dfdfdf;
+}
+
+img.imagem-principal{
+	width: 98%;
+	border: 3px solid #dfdfdf;	
+}
+						/*FORMATAR O CABEÇALHO*/
+						/* "NOVA LEGISLACAO" */
+
+h3 {
+	text-transform: uppercase;   /* <-- PARA FICAR MAIUSCULO */
+	display: inline;
+	font-size: 0.8em;
+	padding: 3px;
+}
+
+.destaque h3 {
+	background: #b10333;
+	color: #fff;
+}
+
+.entrevista h3 {
+	background: #de003e;
+}
+								/*FORMATAR LISTA DE NOTICIA/CONTEUDO PEQUENO IMG+TEXTO*/
+#lista-noticias li {
+	padding: 2px;
+	border-bottom: 1px solid #ccc;
+	height: 65px;
+}
+/* >>> COM ISSO EU QUERO SELECIONAR A IMG QUE ESTA DENTRO DE UM LINK QUE ESTA DENTRO UM LI*/
+
+#lista-noticias li a img { 	
+	float: left;
+	margin: 5px;
+}
+
+#lista-noticias li a { 	  /* FORMATAR APENAS O LINK */
+	text-decoration: none;
+	/* font-size: 0.8em; */
+}
+
+#lista-noticias li a h3 { 	/* >> FORMATAR h3 QUE ESTA DENTRO DO LINK << */
+	/* tex t-decoration: none; */
+	font-size: 0.8em;
+	padding: 0;		/* >> RETIRAR O ESPACAMENTO LATERAL << */
+	color: #3e7ab9;
+}
+
+#lista-noticias li a p {   /* >> FORMATAR O PARAGRAFO QUE ESTA DENTRO DO LINK << */
+	/* text-decoration: none; */
+	font-size: 0.7em;
+	color: #000;
+}
+
+#lista-noticias li:hover {   /* >> PASSAR O MOUSE POR CIMA << */
+	background: #eee; /* >> OBS FOI APLICADO O BACKG. EM CIMA DO LI << */
+	cursor: pointer;
+}
+								/*FORMATAR O RODAPE*/
+#container-rodape{
+	background: #294c71;
+	padding: 20px;
+}
+
+#rodape{
+	width: 750px;
+	margin: 0 auto;
+	color: #fff;
+}
+				/*USAR MARGENS PARA POSICIONAR O LATERAL EXAMENTE NO LOCAL QUE EU QUERO */
+
+/*COMBINACOES DE COLUNA */
+
+/* O PRIMARIO TEM 555px + 15px QUE E O ESPACAMENTO ENTRE ELES + 180px QUE E A LATERAL 
+ COM ISSO NOS TEREMOS O TOTAL DE 750px */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
